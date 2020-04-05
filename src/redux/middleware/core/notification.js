@@ -21,6 +21,6 @@ export const notificationMiddleware = () => (next) => (action) => {
     }, 30000)
 
   } else {
-    next(action)
+    next(action);
   }
 };
