@@ -14,11 +14,11 @@ export const apiRequest = ({ body, method, url, feature}) => (
   ))({ body, method, url, feature});
 
 
-export const apiSuccess = ({response, feature}) => (
+export const apiSuccess = ({data, feature}) => (
   createAction(`${feature} ${API_SUCCESS}`,
-    () => response,
+    () => data,
     () => ({feature})
-  ))({response, feature});
+  ))({data, feature});
 
 export const apiError = ({error, feature}) => (
   createAction(`${feature} ${API_ERROR}`,
