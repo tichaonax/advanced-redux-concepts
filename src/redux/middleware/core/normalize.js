@@ -11,10 +11,14 @@ export const normalizeMiddleware = ({dispatch}) => (next) => (action) => {
     dispatch(dataNormalized({feature: action.meta.feature}));
 
     // transform the data structure
-    const transformed = action.payload.reduce((acc, item) => {
-      acc[item[action.meta.normalizeKey]] = item;
-      return acc;
-    }, {});
+    let transformed = action.payload;
+
+    if (Array.isArray(action.payload)){
+        transformed= action.payload.reduce((acc, item) => {
+          acc[item[action.meta.normalizeKey]] = item;
+          return acc;
+        }, {});
+    };
 
     // fire the beer document action
     switch (action.type) {
@@ -33,17 +37,6 @@ export const normalizeMiddleware = ({dispatch}) => (next) => (action) => {
       default:
         break;
     }
- /*     // transform the data structure
-    const beer = action.payload.reduce((acc, item) => {
-      acc[item[action.meta.normalizeKey]] = item;
-      return acc;
-    }, {});
-
-    // fire the beer document action
-    next(setBeer({beer, normalizeKey: null})) */
-
-    //next(action)
-
   } else {
     next(action);
   }

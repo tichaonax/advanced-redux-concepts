@@ -6,7 +6,7 @@ const DATA_NORMALIZED = 'DATA_NORMALIZED';
 export const dataNormalized = ({feature}) => (
   createAction(
     `${feature} ${DATA_NORMALIZED}`, 
-    () => ({}),
+    () => undefined,
     () => ({feature})
   )
 )({feature});

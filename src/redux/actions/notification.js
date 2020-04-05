@@ -7,9 +7,17 @@ export const REMOVE_NOTIFICATION = 'REMOVE_NOTIFICATION';
 
 // action creators
 export const setNotification = ({message, feature}) => (
-    createAction(`${feature} ${SET_NOTIFICATION}`, message, {feature})
-);
+    createAction(
+        `${feature} ${SET_NOTIFICATION}`,
+        () => message,
+        () => ({feature})
+    )
+)({message, feature});
 
 export const removeNotification = ({notificationId, feature}) => (
-    createAction(`${feature} ${REMOVE_NOTIFICATION}`,notificationId, {feature})
-);
+    createAction(
+        `${feature} ${REMOVE_NOTIFICATION}`,
+        () => notificationId,
+        () => ({feature})
+        )
+)({notificationId, feature});

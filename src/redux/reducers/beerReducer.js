@@ -1,7 +1,7 @@
 import { createReducer } from '../createReducer';
 import {SET_BEER} from "../actions/beer";
 
-const initState = [];
+const initState = {};
 
 export const beerReducer = createReducer(initState,
   {

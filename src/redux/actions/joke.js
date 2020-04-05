@@ -9,13 +9,12 @@ export const FETCH_JOKE = `${JOKE} FETCH`;
 export const SET_JOKE   = `${JOKE} SET`;
 
 // action creators
-export const fetchJoke = ({query}) => (
+export const fetchJoke = (query) => (
     createAction(
         FETCH_JOKE, 
         () => query,
-        () => ({})
     )
-)({query});
+)(query);
 
 export const setJoke= ({joke, normalizeKey}) => (
   createAction(

@@ -18,7 +18,7 @@ export const notificationMiddleware = () => (next) => (action) => {
     // dispatch a delayed clear action
     setTimeout(() => {
       next(removeNotification({notificationId: id, feature: meta.feature}))
-    }, 3000)
+    }, 30000)
 
   } else {
     next(action)

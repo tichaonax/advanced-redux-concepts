@@ -2,28 +2,38 @@
 import {applyMiddleware, combineReducers, compose, createStore} from 'redux';
 import { createLogger } from 'redux-logger';
 
-import {beerReducer} from './reducers/beerReducer';
+import {actionSplitterMiddleware} from "./middleware/core/actionSplitter";
 import {beerMiddleware} from './middleware/feature/beer';
+import {jokeMiddleware} from './middleware/feature/joke';
+import {timeMiddleware} from './middleware/feature/worldtime';
 import {apiMiddleware} from './middleware/core/api';
-import {uiReducer} from "./reducers/uiReducer";
-import {notificationsReducer} from "./reducers/notificationReducer";
 import {normalizeMiddleware} from "./middleware/core/normalize";
 import {notificationMiddleware} from "./middleware/core/notification";
 import {loggerMiddleware} from "./middleware/core/logger";
-import {actionSplitterMiddleware} from "./middleware/core/actionSplitter";
+
+import {beerReducer} from './reducers/beerReducer';
+import {jokeReducer} from './reducers/jokeReducer';
+import {timeReducer} from './reducers/timeReducer';
+import {uiReducer} from "./reducers/uiReducer";
+import {notificationsReducer} from "./reducers/notificationReducer";
 
 const rootReducer = combineReducers({
   beer: beerReducer,
+  joke: jokeReducer,
+  time: timeReducer,
   ui: uiReducer,
   notification: notificationsReducer
 });
 
 // create the feature middleware array
 const featureMiddleware = [
-  beerMiddleware
+  beerMiddleware,
+  jokeMiddleware,
+  timeMiddleware,
 ];
 
-// create the core middleware array
+// create the core middleware array in the order 
+// the actions are forwarded from one to the other
 const coreMiddleware = [
   actionSplitterMiddleware,
   apiMiddleware,

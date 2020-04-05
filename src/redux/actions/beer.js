@@ -13,7 +13,6 @@ export const fetchBeer = ({query}) => (
   createAction(
     FETCH_BEER,
     () => query,
-    () => ({}),
   )
 )({query})
 
