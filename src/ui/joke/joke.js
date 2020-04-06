@@ -34,7 +34,7 @@ const Joke = ({onFetchJoke, joke, id, type, category, setup, delivery, categorie
         <CardActions>
           <Button variant="contained" size="small" 
             onClick={ () => onFetchJoke('Miscellaneous')}>
-              Get Another Beer
+              Get Another Joke
           </Button>
         </CardActions>
       </Card>
