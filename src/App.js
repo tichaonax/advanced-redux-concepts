@@ -3,8 +3,23 @@ import {Grid} from '@material-ui/core';
 
 import Header from './ui/header';
 import Content from './ui/content';
+import { connect } from 'react-redux';
+import { useEffect, useState } from 'react';
+import {fetchJoke} from './redux/actions/joke';
 
-function App() {
+const App = (props) => {
+  
+  const { onFetchJoke } = props;
+  const [timerState, setTimer] = useState({});
+  useEffect(() => {
+    const pollStatus = () => onFetchJoke('programming');
+    let timer = setInterval(pollStatus, 15000);
+    setTimer({ timer });
+
+    return () => clearInterval(timerState);
+  }, [onFetchJoke]);
+ 
+
   return (
     <Grid container direction="column" justify="center">
       <Grid item>
@@ -21,4 +36,15 @@ function App() {
   );
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onFetchJoke: (category) => {
+      dispatch(fetchJoke(category));
+    },
+  };
+}
+
+export default connect(
+  null,
+  mapDispatchToProps,
+)(App);

@@ -17,7 +17,8 @@ export const dispatcherMiddleware = () => (next) => (action) => {
             // Each time someone requests a joke I want
             // to know what time they are doing it and then reward them with a beer
             next(fetchJoke(action.payload));
-            next(fetchBeer(''));
+            //request beer after two seconds
+            setTimeout(() => { next(fetchBeer('random')); }, 2000);
             next(fetchTime('ip'));  
             break;
 

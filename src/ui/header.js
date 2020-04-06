@@ -2,6 +2,7 @@ import React from 'react'
 import { AppBar, Toolbar, Typography } from '@material-ui/core'
 import AcUnitIcon from '@material-ui/icons/AcUnit';
 import {makeStyles} from '@material-ui/styles';
+import Time from './time/time'
 
 const useStyles = makeStyles(() => ({
     typographyStyles: {
@@ -15,7 +16,9 @@ const Header = props => {
     return (
    <AppBar position="static">
        <Toolbar>
-           <Typography className={classes.typographyStyles}>Time: 15:30</Typography>
+           <Typography className={classes.typographyStyles}>
+               <Time/>
+            </Typography>
            <AcUnitIcon/>
        </Toolbar>
    </AppBar>

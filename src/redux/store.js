@@ -58,7 +58,7 @@ const enhancer = composeEnhancers(
         ...routingMiddleware,
         ...featureMiddleware,
         ...coreMiddleware,
-        // logger,
+        //logger,
         ));
 
 // create and configure the store

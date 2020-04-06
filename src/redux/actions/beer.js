@@ -9,7 +9,7 @@ export const FETCH_BEER = `${BEER} FETCH`;
 export const SET_BEER   = `${BEER} SET`;
 
 // action creators
-export const fetchBeer = ({query}) => (
+export const fetchBeer = (query) => (
   createAction(
     FETCH_BEER,
     () => query,

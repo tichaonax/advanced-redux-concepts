@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import { fetchJoke } from '../../redux/actions/joke';
 import {jokeSelector} from '../../redux/selectors/joke';
 
-const Joke = ({joke, id, type, category, setup, delivery, categories}) => {
+const Joke = ({onFetchJoke, joke, id, type, category, setup, delivery, categories}) => {
     const classes = useStyles();
     return (
         <Card className={classes.root} variant="outlined">
@@ -32,7 +32,10 @@ const Joke = ({joke, id, type, category, setup, delivery, categories}) => {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Get Another Joke</Button>
+          <Button variant="contained" size="small" 
+            onClick={ () => onFetchJoke('Miscellaneous')}>
+              Get Another Beer
+          </Button>
         </CardActions>
       </Card>
     )
@@ -63,8 +66,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-      onFetchJoke: () => {
-        dispatch(fetchJoke());
+      onFetchJoke: (category) => {
+        dispatch(fetchJoke(category));
       },
     };
   }
