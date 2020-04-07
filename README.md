@@ -3,13 +3,18 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Credits
 
 Beer Api [https://sv443.net/jokeapi/v2](https://sv443.net/jokeapi/v2)
-World time Api [http://worldtimeapi.org/api/ip](http://worldtimeapi.org/api/ip)
-Joke Api [https://api.punkapi.com/v2/beers](https://api.punkapi.com/v2/beers)
-Material UI [https://material-ui.com/](https://material-ui.com/)
-[React + Material UI: Actually coding a UX design](https://www.youtube.com/watch?v=tKzSnjWPtEw&t=1520s)
-[Boris Dinkevich: Practical Advanced Redux — ReactNext 2017](https://www.youtube.com/watch?v=Gjiu7Lgdg3s)
-[Advanced Redux Patterns - Nir Kaufman @ ReactNYC](https://www.youtube.com/watch?v=JUuic7mEs-s)
 
+World time Api [http://worldtimeapi.org/api/ip](http://worldtimeapi.org/api/ip)
+
+Joke Api [https://api.punkapi.com/v2/beers](https://api.punkapi.com/v2/beers)
+
+Material UI [https://material-ui.com/](https://material-ui.com/)
+
+[React + Material UI: Actually coding a UX design](https://www.youtube.com/watch?v=tKzSnjWPtEw&t=1520s)
+
+[Boris Dinkevich: Practical Advanced Redux — ReactNext 2017](https://www.youtube.com/watch?v=Gjiu7Lgdg3s)
+
+[Advanced Redux Patterns - Nir Kaufman @ ReactNYC](https://www.youtube.com/watch?v=JUuic7mEs-s)
 
 
 ## Available Scripts
