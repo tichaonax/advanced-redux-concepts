@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Beer Api [https://sv443.net/jokeapi/v2](https://sv443.net/jokeapi/v2)
 
-World time Api [http://worldtimeapi.org/api/ip](http://worldtimeapi.org/api/ip)
+World time Api [http://worldtimeapi.org/(http://worldtimeapi.org/)
 
 Joke Api [https://api.punkapi.com/v2/beers](https://api.punkapi.com/v2/beers)
 
