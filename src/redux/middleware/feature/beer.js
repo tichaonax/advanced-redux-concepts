@@ -27,7 +27,7 @@ export const beerMiddleware = () => (next) => (action) => {
 
     case `${BEER} ${API_ERROR}`:
       next([
-        setNotification({message: action.payload.message, feature: BEER}),
+        setNotification({message: action.payload, feature: BEER}),
         setLoader({state: false, feature: BEER})
       ]);
       break;

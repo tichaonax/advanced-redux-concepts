@@ -13,7 +13,7 @@ const App = (props) => {
   const [timerState, setTimer] = useState({});
   useEffect(() => {
     const pollStatus = () => onFetchJoke('programming');
-    let timer = setInterval(pollStatus, 15000);
+    let timer = setInterval(pollStatus, 600000);
     setTimer({ timer });
 
     return () => clearInterval(timerState);

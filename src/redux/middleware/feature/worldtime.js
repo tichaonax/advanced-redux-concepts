@@ -27,7 +27,7 @@ export const timeMiddleware = () => (next) => (action) => {
 
     case `${TIME} ${API_ERROR}`:
       next([
-        setNotification({message: action.payload.message, feature: TIME}),
+        setNotification({message: action.payload, feature: TIME}),
         setLoader({state: false, feature: TIME})
       ]);
       break;

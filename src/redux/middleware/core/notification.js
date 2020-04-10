@@ -8,6 +8,7 @@ export const notificationMiddleware = () => (next) => (action) => {
 
     // enrich the original payload with an id
     const notification = {
+      feature: meta.feature,
       id,
       massage: payload
     };
@@ -18,7 +19,7 @@ export const notificationMiddleware = () => (next) => (action) => {
     // dispatch a delayed clear action
     setTimeout(() => {
       next(removeNotification({notificationId: id, feature: meta.feature}))
-    }, 30000)
+    }, 120000)
 
   } else {
     next(action);

@@ -27,7 +27,7 @@ export const jokeMiddleware = () => (next) => (action) => {
 
     case `${JOKE} ${API_ERROR}`:
       next([
-        setNotification({message: action.payload.message, feature: JOKE}),
+        setNotification({message: action.payload, feature: JOKE}),
         setLoader({state: false, feature: JOKE})
       ]);
       break;
