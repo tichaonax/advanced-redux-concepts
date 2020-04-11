@@ -33,11 +33,10 @@ const routingMiddleware = [
 ];
 
 // create the feature middleware array
-const featureMiddleware = [
-    dispatcherMiddleware,
-    beerMiddleware,
-    jokeMiddleware,
-    timeMiddleware,
+const featureMiddleware = [ 
+  jokeMiddleware,
+  beerMiddleware,
+  timeMiddleware,
 ];
 
 // create the core middleware array in the order 

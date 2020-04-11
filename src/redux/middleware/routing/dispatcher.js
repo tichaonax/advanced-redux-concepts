@@ -3,7 +3,8 @@ import {FETCH_JOKE, fetchJoke} from '../../actions/joke';
 import {fetchTime} from '../../actions/worldtime';
 
 // this routing middleware needs to come earlier than the others that depend on it
-export const dispatcherMiddleware = () => (next) => (action) => {
+export const dispatcherMiddleware = (state) => (next) => (action) => {
+    //next(action);
     switch (action.type) {
         case FETCH_JOKE:
             // This pattern is an example where one action can result in multiple one
@@ -17,14 +18,15 @@ export const dispatcherMiddleware = () => (next) => (action) => {
             // Each time someone requests a joke I want
             // to know what time they are doing it and then reward them with a beer
             next(fetchJoke(action.payload));
-            //request beer after two seconds
-            setTimeout(() => { next(fetchBeer('random')); }, 2000);
+            //request beer after 3 seconds
+            setTimeout(() => { next(fetchBeer('random')); }, 3000);
             next(fetchTime('ip'));  
             break;
 
         default:
             // just pass the action along
             next(action);
+            //console.log(state.getState());
             break;
     }
 };
